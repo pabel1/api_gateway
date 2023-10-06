@@ -1,10 +1,13 @@
 import { Server } from 'http'
 import { errorLogger, logger } from './App/shared/logger'
+import { RedisClient } from './App/shared/redisConnect'
 import config from './config'
 import app from './index'
 async function main() {
   try {
     // await mongoose.connect(config.Database_URL as string)
+
+    await RedisClient.connect()
     console.log(`Database connected Successfully!!`)
     logger.info(`Database connected Successfully!!`)
 

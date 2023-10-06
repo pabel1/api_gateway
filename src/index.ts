@@ -2,7 +2,6 @@ import cors from 'cors'
 import express, { Application, NextFunction, Request, Response } from 'express'
 import httpStatus from 'http-status'
 import globalErrorHandler from './App/Middleware/globalErrorHandler'
-import router from './App/routes'
 const app: Application = express()
 
 app.use(cors())
@@ -11,7 +10,10 @@ app.use(express.json({ limit: '100mb' }))
 app.use(express.urlencoded({ extended: true, limit: '100mb' }))
 
 // define routes
-app.use('/api/v1', router)
+// app.use('/api/v1', router)
+app.use( (req: Request, res: Response, next: NextFunction)=>{
+console.log("first")
+})
 
 //global error handler
 app.use(globalErrorHandler)
