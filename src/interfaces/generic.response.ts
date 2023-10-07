@@ -1,13 +1,14 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { IGenericErrorMessage } from './error'
 
 // ?generic response
-export type IGenericResponse<T> = {
+export type IGenericResponse = {
   meta: {
     page?: number
     limit?: number
     total?: number
   }
-  data: T
+  data?: any
 }
 
 // !generic error response

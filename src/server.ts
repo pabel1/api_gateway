@@ -1,6 +1,7 @@
 import { Server } from 'http'
 import { errorLogger, logger } from './App/shared/logger'
 import { RedisClient } from './App/shared/redisConnect'
+
 import config from './config'
 import app from './index'
 async function main() {
